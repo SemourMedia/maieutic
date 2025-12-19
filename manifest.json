@@ -1,0 +1,24 @@
+{
+  "project": "[PROJECT_NAME]",
+  "version": "0.1.0",
+  "philosophy": {
+    "name": "Name",
+    "core_principle": "Principle",
+    "defaults": {
+      "db": "sqlite",
+      "network": "local-first"
+    }
+  },
+  "phases": [
+    {
+      "id": 1,
+      "name": "Foundation",
+      "status": "completed"
+    },
+    {
+      "id": 2,
+      "name": "Core Capabilities",
+      "status": "active"
+    }
+  ]
+}
