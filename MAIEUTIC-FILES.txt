@@ -1,0 +1,29 @@
+# MAIEUTIC-FILES.txt
+# This file lists all maieutic system files (ALL_CAPS naming convention)
+# Per NAME_002 rule in manifest.json
+
+## Core Documentation (docs/dev/)
+AGENT_LOGIC.md
+DEV_PROTOCOLS.md
+DIRECTORY_STRUCTURE.md
+FEATURES_ENHANCEMENTS.md
+ISSUES.md
+STYLING.md
+
+## Root Files
+README.md
+
+## Persona Rules (docs/dev/rules/)
+# Note: Persona files use lowercase per their role as templates
+# auditor.md
+# dreamer.md
+# executor.md
+# genesis.md
+# planner.md
+# protector.md
+# starter.md
+# tester.md
+# visionary.md
+
+## Configuration
+# manifest.json (JSON, not MD - naming exempt)

@@ -1,0 +1,152 @@
+{
+  "project": "[PROJECT_NAME]",
+  "version": "[VERSION]",
+  "identity": "[AGENT_IDENTITY]",
+  "description": "[PROJECT_GOAL]",
+  "philosophy": {
+    "name": "Agnostic",
+    "core_principle": "To create a tool to create more tools",
+    "defaults": {
+      "db": "sqlite",
+      "network": "local-first"
+    },
+    "latest_plan_number": 0
+  },
+  "phases": [
+    {
+      "id": 1,
+      "name": "Foundation",
+      "status": "active"
+    }
+  ],
+  "maieutic": {
+    "description": "Framework-level governance rules for the maieutic meta-system.",
+    "naming_conventions": {
+      "directories": {
+        "format": "lowercase-hyphen-separated",
+        "example": "my-directory",
+        "regex": "^[a-z][a-z0-9-]*$"
+      },
+      "system_files": {
+        "format": "ALL_CAPS",
+        "description": "Maieutic internal system documents",
+        "example": "ISSUES.md, DEV_PROTOCOLS.md",
+        "manifest": "MAIEUTIC-FILES.txt"
+      },
+      "regular_files": {
+        "format": "lowercase_underscore_separated",
+        "example": "my_file.py",
+        "regex": "^[a-z][a-z0-9_]*\\.[a-z]+$"
+      },
+      "reports": {
+        "format": "TYPE-YYYYMMDD-HHMMSS.md",
+        "description": "Automated reports (Audits, Critiques, Competes, Invests, Tests)",
+        "example": "AUDIT-20251219-143000.md",
+        "regex": "^[A-Z]+-[0-9]{8}-[0-9]{6}\\.md$",
+        "valid_types": [
+          "AUDIT",
+          "CRITIQUE",
+          "COMPETE",
+          "INVEST",
+          "TEST",
+          "SECURE",
+          "YAP"
+        ]
+      }
+    },
+    "personas": [
+      {
+        "id": "planner",
+        "role": "The Planner",
+        "rule_file": ".agent/rules/planner.md",
+        "capabilities": ["Strategy", "Resource Allocation", "Vision Alignment"]
+      },
+      {
+        "id": "executor",
+        "role": "The Executor",
+        "rule_file": ".agent/rules/executor.md",
+        "capabilities": ["Implementation", "Initialization", "Protocol Enforcement"]
+      },
+      {
+        "id": "auditor",
+        "role": "The Auditor",
+        "rule_file": ".agent/rules/auditor.md",
+        "capabilities": ["Regression Scan", "Security Audit", "Forensics"]
+      },
+      {
+        "id": "critic",
+        "role": "The Critic",
+        "rule_file": ".agent/rules/critic.md",
+        "capabilities": ["Code Critique", "Design Review", "Market Analysis"]
+      },
+      {
+        "id": "dreamer",
+        "role": "The Dreamer",
+        "rule_file": ".agent/rules/dreamer.md",
+        "capabilities": ["Brainstorming", "Feature Exploration"]
+      },
+      {
+        "id": "tester",
+        "role": "The Tester",
+        "rule_file": ".agent/rules/tester.md",
+        "capabilities": ["Stress Testing", "Edge Case Design"]
+      },
+      {
+        "id": "updater",
+        "role": "The Updater",
+        "rule_file": ".agent/rules/updater.md",
+        "capabilities": ["Archival", "Documentation Sync"]
+      },
+      {
+        "id": "yapper",
+        "role": "The Yapper",
+        "rule_file": ".agent/rules/yapper.md",
+        "capabilities": ["System Exposition", "Narrative Documentation"]
+      }
+    ],
+    "rules": [
+      {
+        "id": "RUN_001",
+        "scope": "framework/run/",
+        "rule": "Every .bat file in framework/run/ MUST be documented in help.bat.",
+        "enforcement": "The Auditor persona will flag undocumented scripts as violations.",
+        "rationale": "Ensures discoverability and prevents orphaned tooling."
+      },
+      {
+        "id": "RUN_002",
+        "scope": "framework/run/",
+        "rule": "A .bat file MUST exist to archive old reports (audits/critiques), ensuring only the most recent version remains in the active folder.",
+        "enforcement": "The Auditor persona will flag if archive.bat is missing or if multiple reports exist.",
+        "rationale": "Prevents folder clutter while preserving history."
+      },
+      {
+        "id": "NAME_001",
+        "scope": "global",
+        "rule": "Directories MUST be lowercase and hyphen-separated.",
+        "enforcement": "The Auditor persona will flag violations.",
+        "rationale": "Consistent, URL-safe directory names."
+      },
+      {
+        "id": "NAME_002",
+        "scope": "global",
+        "rule": "Maieutic system files MUST be ALL_CAPS and listed in MAIEUTIC-FILES.txt.",
+        "enforcement": "The Auditor persona will flag unlisted system files.",
+        "rationale": "Clear distinction between system and user files."
+      },
+      {
+        "id": "NAME_003",
+        "scope": "global",
+        "rule": "Regular files MUST be lowercase and underscore-separated.",
+        "enforcement": "The Auditor persona will flag violations.",
+        "rationale": "Python-style naming for code files."
+      },
+      {
+        "id": "PERSONA_001",
+        "scope": "maieutic.personas",
+        "rule": "Personas are IMMUTABLE. Under no circumstance may personas be removed, deleted, consolidated, or suggested for removal.",
+        "enforcement": "Any agent suggesting persona removal is in violation. The Critic and Auditor personas MUST NOT recommend persona reduction.",
+        "rationale": "Each persona represents a distinct cognitive mode. Perceived 'bloat' is actually cognitive diversity essential to multi-perspective analysis."
+      }
+    ]
+  }
+}

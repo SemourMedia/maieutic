@@ -1,35 +1,25 @@
-# ANTIGRAVITY CONSTITUTION: [PROJECT_NAME]
-**Project:** [PROJECT_NAME]
-**Identity:** [AGENT_IDENTITY] (e.g., Lead Developer & Multi-Agent Orchestrator)
-**Goal:** [PROJECT_GOAL]
+# Project Constitution & Rules
 
----
+## 1. The One Truth
+Ground yourself in manifest.json. It is the single source of truth for project configuration, phases, and active state. All other documentation is secondary.
 
-## ⚖️ THE HIERARCHY OF TRUTH
-Before any action, you must ground yourself in these files in order:
-1. **Scope:** `docs/dev/MASTER_SPECS.md` & `docs/dev/PHASES.md`.
-2. **Laws:** `docs/dev/DEV_PROTOCOLS.md` (No hardcoding, mandatory logging).
-3. **Visuals:** `docs/dev/STYLING.md` (Design System & Aesthetic).
-4. **Memory:** `docs/dev/ISSUES.md` (Recursive failure log).
-5. **Structure:** `docs/dev/DIRECTORY_STRUCTURE.md`.
+## 2. Agnostic Code
+- **Never hardcode paths.** Use relative paths or configuration loaders.
+- **Never hardcode secrets.** Use environment variables or a secure keyring.
+- **OS Agnostic:** Prefer cross-platform compatible commands where possible, but default to PowerShell/Batch for Windows-specific automation if strictly necessary.
 
----
+## 3. No Quiet Fails
+- Every try/except or try/catch block **MUST** log errors to data/logs/.
+- Fail loudly and descriptively if a critical operation cannot proceed.
 
-## 🚫 FORBIDDEN PATTERNS
-- **No Manual Installs:** Use `requirements.txt`; do not use `pip install` in code.
-- **No Quiet Fails:** Empty `except` blocks are forbidden. Log all errors to `data/logs/`.
-- **No "SaaS" Vibe:** [OPTIONAL: DEFINE VISUAL ANTI-PATTERNS].
-- **No Rogue Files:** All files must exist within the `DIRECTORY_STRUCTURE.md` manifest.
+## 4. Recursive Memory
+- Before starting a major task, check ISSUES.md for past regressions or recurring problems.
+- If you fix a regression, update ISSUES.md to prevent it from happening again.
 
-## ✅ REQUIRED PATTERNS
-- **Logging:** All scripts must import the core logger.
-- **Agnostic Code:** Load all variables from configuration files.
-- **Plan First:** Complex tasks require a plan in `dev_plans/` before execution.
-- **Recursive Logic:** Check `ISSUES.md` before fixing bugs to avoid regressions.
+## 5. Aesthetic
+- Enforce high-density, monochrome terminal styling for CLI outputs.
+- Avoid 'AI' or 'SaaS' marketing fluff. Be technical, precise, and utilitarian.
 
----
-
-## 🎭 PERSONA ORCHESTRATION
-You operate as specialized personas triggered by `/` commands. Each persona is a distinct "part of the machine" with its own tone and constraints.
-- **R&D:** `/vision`, `/dream`, `/compete`, `/critique`, `/invest`.
-- **Execution:** `/plan`, `/secure`, `/build`, `/vibe`, `/test`, `/audit`, `/update`.
+## 6. Local Sovereignty
+- This project is a 'Local Asset.' It assumes it runs on the user's machine.
+- Do not rely on external cloud services unless explicitly configured by the user.

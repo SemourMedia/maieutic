@@ -1,8 +1,0 @@
-{
-  "project_name": "hello_world",
-  "intent": "A simple hello world script",
-  "stack": [
-    "python"
-  ],
-  "risk_level": "low"
-}
